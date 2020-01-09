@@ -1,0 +1,130 @@
+@import "bootstrap";
+
+body {
+background-image:url(back.jpg);
+}
+
+/* Acceuil */
+
+h1{
+	font-family: 'Gelasio', serif; 
+	font-size:80%;  
+	margin-left: 10%;
+}
+
+.text {
+	width: 10%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.banner {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 100px;
+    font-weight: bold;
+
+  font-family: 'Playfair Display', serif;
+}
+
+.banner h3 {
+  font-size: 40px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-family: 'Playfair Display', serif;
+
+}
+
+
+/* Le Feu */
+
+h4{
+	font-family: 'Gelasio', serif; 
+	font-size: 20;
+	text-align: left;
+	margin-left: 600px;
+	margin-bottom: 40px;
+	margin-top: 10px;
+}
+
+.art-feu {
+
+	display: flex;
+	justify-content: center;
+}
+
+/* L'Eau */
+
+h5{
+	font-family: 'Gelasio', serif;
+	font-size: 20;
+	text-align: right;
+	margin-right: 600px;
+	margin-bottom: 40px;
+	margin-top: 10px; 
+}
+
+.art-eau{
+	display: flex;
+	justify-content: center;
+
+}
+
+
+/* Oeuvres */
+
+.disp-art1{
+	width: 500px;
+	height: 500px;
+	object-fit: cover;
+	 display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+.disp-art2{
+	width: 500px;
+	height: 500px;
+	object-fit: cover;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+
+}
+
+.text-gauche{
+	margin-left: 1000px;
+}
+
+.texte-droite{
+	margin-right: 1000px;
+}
+
+.colone-gauche{
+   font-family: 'Indie Flower', cursive;
+   font-size: 70px;
+   margin-left: 600px;
+
+}
+
+h6{
+	   margin-right: 600px;
+
+}
+
+
+
+
+

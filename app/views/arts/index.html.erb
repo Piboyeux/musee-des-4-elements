@@ -1,44 +1,178 @@
-<p id="notice"><%= notice %></p>
+<link href="https://fonts.googleapis.com/css?family=Gelasio|Indie+Flower|Playfair+Display&display=swap" rel="stylesheet">
+
 
 <!-- NavBar -->
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand">Navbar</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Musée des 4 éléments</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Le Feu</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">L'Eau</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">L'Air</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">La Terre</a>
+      </li>
+    </ul>
+  </div>
   <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    <input class="form-control mr-sm-2" type="search" placeholder="Titre, Autheur, Date..." aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
   </form>
 </nav>
 
-
 <!-- NavBar -->
 
-<h1>Arts</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path 'acceuil.png' %>);">
+  <div class="container">
+    <h1>Musée des 4 éléments</h1>
+    <h3>Voyages à travers les 4 éléments.</h3>
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Author</th>
-      <th>Title</th>
-      <th>Year</th>
-      <th>Photo</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @arts.each do |art| %>
-      <tr>
-        <td><%= art.author %></td>
-        <td><%= art.title %></td>
-        <td><%= art.year %></td>
-        <td><img width=300px src="<%= art.photo %>"></td>
-        <td><%= link_to 'Show', art %></td>
-        <td><%= link_to 'Edit', edit_art_path(art) %></td>
-        <td><%= link_to 'Destroy', art, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+
+<p id="notice"><%= notice %></p> <!-- Merde ! -->
+
+<!-- Oeuvre -->
+
+<div class="feu">
+  <div class="line"></div>
+  <h2 class="colone-gauche">Le Feu</h2>
+    <h4>Le feu est le premier élément de notre visite. Il est sauvage,<br>
+    incontrôlable, chaud. Il regroupe des œuvres aux teintes chaudes,<br>
+    des nuances de rouge, de jaune. Il représente à la fois la passion, la<br>
+    destruction et le côté sauvage de la nature.</h4>
+
+  <% @arts.each_with_index do |art, numero| %>
+    <% if numero.even? %>
+      <div class="art-feu">
+        <div class="text">
+          <div class="text-gauche">       
+            <div><%= art.author %></div>
+            <div><%= art.title %></div>
+            <div><%= art.year %></div>
+            <div><%= link_to 'Show', art %></div>
+            <div><%= link_to 'Edit', edit_art_path(art) %></div>
+            <div><%= link_to 'Destroy', art, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+          </div> 
+        </div>
+        <img class="disp-art1" src="<%= art.photo %>">
+      </div>
+    <% else %>
+      <div class="art-feu">
+        <img class="disp-art2" src="<%= art.photo %>">
+        <div class="text">        
+          <div class="text-droite">       
+            <div><%= art.author %></div>
+            <div><%= art.title %></div>
+            <div><%= art.year %></div>
+            <div><%= link_to 'Show', art %></div>
+            <div><%= link_to 'Edit', edit_art_path(art) %></div>
+            <div><%= link_to 'Destroy', art, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+          </div> 
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
+
+  <% end %>
+</div>
+
+<div class="feu">
+  <div class="line"></div>
+  <h6 class="colone-gauche">L'Eau</h6>
+    <h5>L’eau est l’élément apaisant. Source de vie, elle peut prendre<br>
+    plusieurs formes, plusieurs nuances, et peut aussi bien être calme<br>
+    que houleuse, solide que liquide… Elle a plusieurs représentations<br>
+    mais elle procure un sentiment de sérénité que l’on retrouve dans<br>
+    les œuvres suivantes..
+    </h5>
+
+  <% @arts.each_with_index do |art, numero| %>
+    <% if numero.even? %>
+      <div class="art-eau">
+        <div class="text">
+          <div >       
+            <div><%= art.author %></div>
+            <div><%= art.title %></div>
+            <div><%= art.year %></div>
+            <div><%= link_to 'Show', art %></div>
+            <div><%= link_to 'Edit', edit_art_path(art) %></div>
+            <div><%= link_to 'Destroy', art, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+          </div> 
+        </div>
+        <img class="disp-art1" src="<%= art.photo %>">
+      </div>
+    <% else %>
+      <div class="art-eau">
+        <img class="disp-art1" src="<%= art.photo %>">
+        <div class="text">        
+          <div>       
+            <div><%= art.author %></div>
+            <div><%= art.title %></div>
+            <div><%= art.year %></div>
+            <div><%= link_to 'Show', art %></div>
+            <div><%= link_to 'Edit', edit_art_path(art) %></div>
+            <div><%= link_to 'Destroy', art, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+          </div> 
+        </div>
+      </div>
+    <% end %>
+
+  <% end %>
+</div>
+
+<div class="feu">
+  <div class="line"></div>
+  <h2 class="colone-gauche">L'Air</h2>
+    <h4>L’air est un élément omniprésent et invisible. Il permet la vie, et<br>
+        offre une idée de grands espace, de liberté. L’air représente un acte<br>
+        bref, éphémère, et une légèreté que l’on peut retrouver dans les<br>
+        tableaux et les musiques de cette partie.</h4>
+
+  <% @arts.each_with_index do |art, numero| %>
+    <% if numero.even? %>
+      <div class="art-feu">
+        <div class="text">
+          <div>       
+            <div><%= art.author %></div>
+            <div><%= art.title %></div>
+            <div><%= art.year %></div>
+            <div><%= link_to 'Show', art %></div>
+            <div><%= link_to 'Edit', edit_art_path(art) %></div>
+            <div><%= link_to 'Destroy', art, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+          </div> 
+        </div>
+        <img class="disp-art1" src="<%= art.photo %>">
+      </div>
+    <% else %>
+      <div class="art-feu">
+        <img class="disp-art1" src="<%= art.photo %>">
+        <div class="text">        
+          <div>       
+            <div><%= art.author %></div>
+            <div><%= art.title %></div>
+            <div><%= art.year %></div>
+            <div><%= link_to 'Show', art %></div>
+            <div><%= link_to 'Edit', edit_art_path(art) %></div>
+            <div><%= link_to 'Destroy', art, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+          </div> 
+        </div>
+      </div>
+    <% end %>
+
+  <% end %>
+</div>
+
+<!-- Oeuvres -->
 
 <br>
 
